@@ -6,7 +6,6 @@ public class App {
         Track track = new Track();
         track.setLength(100.5);
 
-        race.setTrack();track = new Track();
 
         Engine engine = new Engine();
         engine.setManufacturer("Volvo");
