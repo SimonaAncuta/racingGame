@@ -31,5 +31,15 @@ public class Vehicle {
 
     }
 
+    public double accelerate(double speed, double time)  {
+        return 20;
+    }
 
+    @Override
+    public String toString() {
+        return "Vehicle{" +
+                "name='" + name + '\'' +
+                ", color='" + color + '\'' +
+                '}';
+    }
 }
