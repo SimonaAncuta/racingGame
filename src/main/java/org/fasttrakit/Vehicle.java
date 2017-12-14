@@ -5,6 +5,7 @@ public class Vehicle {
     public static String controlType = "Radio Control";
     private String name;
     private String color;
+    private double currentSpeed;
 
     public String getName() {
         return name;
@@ -23,16 +24,31 @@ public class Vehicle {
     }
 
     public double accelerate(double speed) {
+        System.out.println("Accelerate implementation from Vehicle");
+        currentSpeed += speed;
 
-        System.out.println(speed);
+        return currentSpeed / 60;
 
-        return 10.1;
+    }
 
+    public double getCurrentSpeed() {
+        return currentSpeed;
+    }
 
+    public void setCurrentSpeed(double currentSpeed) {
+        this.currentSpeed = currentSpeed;
     }
 
     public double accelerate(double speed, double time)  {
         return 20;
+    }
+
+    public static String getControlType() {
+        return controlType;
+    }
+
+    public static void setControlType(String controlType) {
+        Vehicle.controlType = controlType;
     }
 
     @Override
