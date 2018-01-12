@@ -6,6 +6,28 @@ public class Vehicle {
     private String name;
     private String color;
     private double currentSpeed;
+    private double travelDistance;
+    private double mileage;
+    private double fuelLevel;
+
+
+    public void accelerate(double speed) {
+        System.out.println("Accelerate implementation from AutoVehicle");
+        setCurrentSpeed(getCurrentSpeed() + speed);
+
+        double finalSpeed = getCurrentSpeed() + speed;
+        setCurrentSpeed(finalSpeed);
+
+        double travelDistance = finalSpeed / 60;
+
+        double spentFuel = travelDistance * mileage / 100;
+
+        fuelLevel -= spentFuel;
+        // same as fuelLevel = fuelLevel - spentFuel
+        travelDistance += currentSpeed/60;
+
+    }
+
 
     public String getName() {
         return name;
@@ -23,14 +45,6 @@ public class Vehicle {
         this.color = color;
     }
 
-    public double accelerate(double speed) {
-        System.out.println("Accelerate implementation from Vehicle");
-        currentSpeed += speed;
-
-        return currentSpeed / 60;
-
-    }
-
     public double getCurrentSpeed() {
         return currentSpeed;
     }
@@ -39,7 +53,7 @@ public class Vehicle {
         this.currentSpeed = currentSpeed;
     }
 
-    public double accelerate(double speed, double time)  {
+    public double accelerate(double speed, double time) {
         return 20;
     }
 
@@ -49,6 +63,30 @@ public class Vehicle {
 
     public static void setControlType(String controlType) {
         Vehicle.controlType = controlType;
+    }
+
+    public double getTravelDistance() {
+        return travelDistance;
+    }
+
+    public void setTravelDistance(double travelDistance) {
+        this.travelDistance = travelDistance;
+    }
+
+    public double getMileage() {
+        return mileage;
+    }
+
+    public void setMileage(double mileage) {
+        this.mileage = mileage;
+    }
+
+    public double getFuelLevel() {
+        return fuelLevel;
+    }
+
+    public void setFuelLevel(double fuelLevel) {
+        this.fuelLevel = fuelLevel;
     }
 
     @Override
